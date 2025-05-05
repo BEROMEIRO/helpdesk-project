@@ -1,18 +1,18 @@
-// backend/routes/authRoutes.js
+// routes/authRoutes.js
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
 
-// criar usuário
+// POST /api/auth/register
 router.post('/register', authController.register);
 
-// login
+// POST /api/auth/login
 router.post('/login', authController.login);
 
-// listar todos (sem senha)
+// GET /api/auth/users
 router.get('/users', authController.listUsers);
 
-// deletar por nomeUsuario
-router.delete('/users/:nomeUsuario', authController.deleteUser);
+// DELETE /api/auth/delete/:nomeUsuario
+router.delete('/delete/:nomeUsuario', authController.deleteUser);
 
 module.exports = router;

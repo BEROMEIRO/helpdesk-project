@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 
 function CreateTicket() {
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
+    const navigate = useNavigate();
+
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -14,10 +17,14 @@ function CreateTicket() {
         }
 
         try {
-            await api.post('/tickets', { titulo, descricao });
+            await api.post('/tickets', { titulo, descricao }, {
+                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+            }
+            );
             alert('Chamado criado com sucesso!');
             setTitulo('');
             setDescricao('');
+            navigate('/tickets');
         } catch (error) {
             alert('Erro ao criar o chamado. Verifique o backend.');
             console.error(error);

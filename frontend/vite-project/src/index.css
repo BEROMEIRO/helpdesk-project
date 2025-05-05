@@ -253,3 +253,107 @@ body {
   text-align: center;
   margin-top: 50px;
 }
+
+
+
+/* Estilo para a página About */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/*Deletar chamados*/
+
+.delete-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.ticket-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ticket-item:hover {
+  background-color: #f0f0f0;
+}
+
+.confirm-dialog {
+  margin-top: 1rem;
+  background-color: #fff3cd;
+  padding: 1rem;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.confirm-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.confirm-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-buttons .yes {
+  background-color: #dc3545;
+  color: white;
+}
+
+.confirm-buttons .no {
+  background-color: #6c757d;
+  color: white;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-button:hover {
+  color: #a71d2a;
+  transform: scale(1.2);
+}

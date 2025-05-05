@@ -1,11 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function Header() {  // Alterado de Navbar para Header
+function Header() {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleDropdown = () => {
         setDropdownOpen((prev) => !prev);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        alert('Logout realizado com sucesso!');
+        navigate('/login');
     };
 
     return (
@@ -30,6 +37,9 @@ function Header() {  // Alterado de Navbar para Header
                                 {/* <Link to="/edit" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
                                     ✏️ Editar Chamado
                                 </Link> */}
+                                <Link to="/kanban" className="dropdown-item" onClick={() => setDropdownOpen(false)} >
+                                    📊 Kanban
+                                </Link>
                                 <Link to="/tickets" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
                                     📋 Acompanhar Chamado
                                 </Link>
@@ -38,10 +48,13 @@ function Header() {  // Alterado de Navbar para Header
                     </div>
 
                     <Link to="/about" className="link">Sobre</Link>
+                    <span className="link" onClick={handleLogout} style={{ cursor: 'pointer' }}>
+                        🚪 Sair
+                    </span>
                 </div>
             </div>
         </nav>
     );
 }
 
-export default Header;  // Exportando como Header agora
+export default Header;  

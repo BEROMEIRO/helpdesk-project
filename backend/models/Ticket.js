@@ -11,8 +11,18 @@ const TicketSchema = new mongoose.Schema({
     },
     status: {
         type: String,
+        enum: ['Aberto', 'Em Progresso', 'Fechado', 'Concluído', 'Finalizado com Sucesso', 'Finalizado sem Sucesso'],
         default: 'Aberto'
     },
+    comentarios: [
+        {
+            texto: String,
+            data: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ],
     criadoEm: {
         type: Date,
         default: Date.now

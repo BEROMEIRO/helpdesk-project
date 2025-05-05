@@ -8,6 +8,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
+import Kanban from './pages/Kanban';
+import About from './pages/About';
+import DeleteTicket from './pages/DeleteTicket';
 
 function AppRoutes() {
   const location = useLocation();
@@ -50,6 +53,22 @@ function AppRoutes() {
             <EditTicket />
           </PrivateRoute>
         } />
+
+        <Route path="/kanban" element={
+          <PrivateRoute>
+            <Kanban />
+          </PrivateRoute>
+        } />
+        <Route path="/about" element={
+          <PrivateRoute>
+            <About />
+          </PrivateRoute>
+        } />
+        <Route path="/delete" element={
+          <PrivateRoute>
+            <DeleteTicket />
+          </PrivateRoute>
+        } />
       </Routes>
     </>
   );
@@ -65,28 +84,3 @@ function App() {
 
 export default App;
 
-
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Home from './pages/Home';
-// import Tickets from './pages/Tickets';
-// import CreateTicket from './pages/CreateTicket';
-// import EditTicket from './pages/EditTicket';
-// import Header from './components/Header';
-// import SelectTicketToEdit from './pages/SelectTicketToEdit';
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <Header />
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/tickets" element={<Tickets />} />
-//         <Route path="/create" element={<CreateTicket />} />
-//         <Route path="/select-edit" element={<SelectTicketToEdit />} />
-//         <Route path="/edit/:id" element={<EditTicket />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;

@@ -6,7 +6,6 @@ helpdesk-project/
 |___ userController.js
 |__ models/
 |___ Ticket.js
-|___ ticketModel.js
 |___ User.js
 |__ node_modules/
 |__ routes/
@@ -23,12 +22,16 @@ helpdesk-project/
 |____ assets/
 |____ components/
 |_____ Header.jsx
+|_____ KanbanBoard.jsx
 |_____ PrivateRoute.jsx
 |_____ TicketCard.jsx
 |____ pages/
+|_____ About.jsx
 |_____ CreateTicket.jsx
+|_____ DeleteTicket.jsx
 |_____ EditTicket.jsx
 |_____ Home.jsx
+|_____ Kanban.jsx
 |_____ Login.jsx
 |_____ Register.jsx
 |_____ SelectTickectToEdit.jsx
